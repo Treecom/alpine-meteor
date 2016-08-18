@@ -3,9 +3,9 @@
 set -e
 
 CONTAINER=martinez/alpine-meteor-example	# <-- Name your container
-TAG=latest									# <-- Tag for your container
-REGISTRY=false								# <-- If you use other then github repo
-BUILD_DIR=`pwd`/.build						# <-- This is where meteor build your files. Folder will be created and after build will be deleted
+TAG=latest					# <-- Tag for your container
+REGISTRY=false					# <-- If you use other then github repo
+BUILD_DIR=`pwd`/.build				# <-- This is where meteor build your files. Folder will be created and after build will be deleted
 
 echo "Start building container ${CONTAINER} ..."
 
@@ -21,6 +21,7 @@ meteor build --directory $BUILD_DIR --architecture=os.linux.x86_64 --server-only
 
 # pull fresh base image:
 docker pull martinez/meteor-alpine:latest &&
+
 
 # build container
 docker build --rm -t ${CONTAINER}:${TAG} . &&
