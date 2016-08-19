@@ -7,7 +7,7 @@ ENV HOME=/root METEORD_DIR=/opt/meteord NODE_VERSION=4.4.7 GYP_DEFINES="linux_us
 WORKDIR /root
 
 COPY scripts $METEORD_DIR
-COPY bin $METEORD_DIR/bin
+# COPY bin $METEORD_DIR/bin
 ONBUILD COPY .build/bundle /app
 
 ONBUILD RUN apk --update add ${BUILD_PACKAGES} \
