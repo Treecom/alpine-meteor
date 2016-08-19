@@ -2,7 +2,7 @@
 
 set -e
 
-docker build --rm -t martinez/meteor-apline:binbuild .
-docker tag martinez/meteor-alpine:latest martinez/meteor-alpine:latest
-docker push martinez/meteor-alpine:latest
+docker build --rm -t martinezko/alpine-meteor:latest .
+docker tag martinezko/alpine-meteor:latest martinezko/alpine-meteor:latest
+docker push martinezko/alpine-meteor:latest
 
