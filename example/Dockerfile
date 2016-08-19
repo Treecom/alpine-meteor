@@ -1,4 +1,4 @@
-FROM martinez/meteor-apline
+FROM martinezko/alpine-meteor:latest
 
 MAINTAINER Martin Bucko <bucko@treecom.net>
 

@@ -2,7 +2,7 @@
 
 set -e
 
-CONTAINER=martinez/alpine-meteor-example	# <-- Name your container
+CONTAINER=martinezko/alpine-meteor-example	# <-- Name your container
 TAG=latest					# <-- Tag for your container
 REGISTRY=false					# <-- If you use other then github repo
 BUILD_DIR=`pwd`/.build				# <-- This is where meteor build your files. Folder will be created and after build will be deleted
