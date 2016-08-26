@@ -3,9 +3,10 @@
 set -e
 
 CONTAINER=martinez/alpine-meteor-example	# <-- Name your container
-TAG=latest					# <-- Tag for your container
-REGISTRY=false					# <-- If you use other then github repo
-BUILD_DIR=`pwd`/.build				# <-- This is where meteor build your files. Folder will be created and after build will be deleted
+TAG=latest									# <-- Tag for your container
+REGISTRY=false								# <-- If you use other then github repo
+BUILD_DIR=`pwd`/.build						# <-- This is where meteor build your files.
+											#     Folder will be created and after build will be deleted
 
 echo "Start building container ${CONTAINER} ..."
 
@@ -14,7 +15,7 @@ rm -rf $BUILD_DIR
 mkdir -p $BUILD_DIR
 
 # install node packages
-meteor npm i --production &&
+meteor npm i &&
 
 # build meteor app
 meteor build --directory $BUILD_DIR --architecture=os.linux.x86_64 --server-only &&
@@ -37,7 +38,7 @@ fi
 if [ $REGISTRY ]; then
 	docker push ${REGISTRY}/${CONTAINER}:${TAG} &&
 else
-	docker push ${REGISTRY}/${CONTAINER}:${TAG} &&
+	docker push ${CONTAINER}:${TAG} &&
 fi
 
 # clean images if needed
