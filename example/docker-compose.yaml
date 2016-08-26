@@ -10,7 +10,7 @@ services:
     container_name: meteorexample-1
     hostname: meteor.click
     restart: always
-    image: martinez/alpine-meteor-example:latest
+    image: martinezko/alpine-meteor-example:latest
     ports:
       - 127.0.0.1:3000:80
     environment:
