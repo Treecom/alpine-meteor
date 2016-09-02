@@ -42,7 +42,7 @@ else
 fi
 
 # clean images if needed
-# docker rmi -f ${CONTAINER}:${TAG} ${REGISTRY}/${CONTAINER}:${TAG} martinez/meteor-alpine:latest
+# docker rmi -f ${CONTAINER}:${TAG} ${REGISTRY}/${CONTAINER}:${TAG} martinezko/alpine-meteor:latest
 
 # to run your container
 # docker run -d ${REGISTRY}/${CONTAINER}:${TAG}
