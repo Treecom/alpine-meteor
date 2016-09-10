@@ -8,15 +8,17 @@ WORKDIR /root
 
 COPY scripts $METEORD_DIR
 # COPY bin $METEORD_DIR/bin
-ONBUILD COPY .build/bundle /app
 
-ONBUILD RUN apk --update add ${BUILD_PACKAGES} \
+RUN apk --update add ${BUILD_PACKAGES} \
 	&& mkdir -p /root \
 	&& ln -s /usr/bin/node /usr/bin/nodejs \
 	&& npm install -g npm@3 \
 	&& npm install -g node-gyp \
-	&& node-gyp install ${NODE_VERSION} \
-	&& sh $METEORD_DIR/build_app.sh \
+	&& node-gyp install ${NODE_VERSION}
+
+ONBUILD COPY .build/bundle /app
+
+ONBUILD RUN sh $METEORD_DIR/build_app.sh \
 	&& sh $METEORD_DIR/clean-final.sh
 
 EXPOSE 80
