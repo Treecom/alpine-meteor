@@ -9,7 +9,7 @@ Dockerfile for creating Nodejs and Meteor compatible application container runni
 
 See example folder how to build your application docker container. Simply copy files from example folder into your Meteor project. Setup options in `docker-build.sh` file and run `sh docker-build.sh`.
 
-TIP: Also graficmagic and phantomjs is avaliable just by uncomment RUN lines in example Dockerfile.
+TIP: Also imagemagick, graficmagick and phantomjs is avaliable just by uncomment RUN lines in example Dockerfile.
 
 ## Big thanks to
 
