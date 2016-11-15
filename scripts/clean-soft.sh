@@ -1,9 +1,10 @@
 set -e
 
-if [ -d /app/programs ]; then
-	find /app/programs/server/node_modules -name test -type d |  xargs rm -rf;
-	find /app/programs/server/npm/node_modules -name test -type d |  xargs rm -rf;
-fi
+# Some modules require test folder even if used in production. Commented out...
+# if [ -d /app/programs ]; then
+# 	find /app/programs/server/node_modules -name test -type d |  xargs rm -rf;
+# 	find /app/programs/server/npm/node_modules -name test -type d |  xargs rm -rf;
+# fi
 
 if [ -d /usr/lib/node_modules/npm ]; then
 	find /usr/lib/node_modules/npm -name test -o -name .bin -type d | xargs rm -rf;
