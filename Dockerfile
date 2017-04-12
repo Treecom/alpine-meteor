@@ -1,4 +1,4 @@
-FROM mhart/alpine-node:4.6.2
+FROM mhart/alpine-node:4.8
 
 MAINTAINER Martin Bucko <bucko@treecom.net>
 
