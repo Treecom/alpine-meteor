@@ -1,6 +1,7 @@
-# Install PhantomJS
+#!/bin/sh
 set -e
 
+# Install PhantomJS
 # install deps
 apk --update add curl freetype-dev freetype fontconfig
 

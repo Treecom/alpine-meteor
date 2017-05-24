@@ -1,3 +1,4 @@
+#!/bin/sh
 set -e
 
 apk --update add imagemagick

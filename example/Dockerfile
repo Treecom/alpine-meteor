@@ -2,8 +2,6 @@ FROM martinezko/alpine-meteor:latest
 
 MAINTAINER Martin Bucko <bucko@treecom.net>
 
-ENV NODE_ENV=production
-
 # If your project need phantomjs
 # RUN sh $METEORD_DIR/install_phantomjs.sh
 

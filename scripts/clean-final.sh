@@ -1,7 +1,8 @@
+#!/bin/sh
 set -e
 
 if [ $BUILD_PACKAGES ]; then
-	apk del ${BUILD_PACKAGES}
+	apk del --purge ${BUILD_PACKAGES}
 fi
 
 if [ -f ${METEORD_DIR}/bin/${PHANTOMJS_TAR_FILE} ]; then

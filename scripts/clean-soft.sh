@@ -1,3 +1,4 @@
+#!/bin/sh
 set -e
 
 # Some modules require test folder even if used in production. Commented out...

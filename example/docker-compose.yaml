@@ -1,10 +1,5 @@
 version: '2.0'
 
-# networks:
-#   default:
-#     external:
-#       name: docker_default
-
 services:
   meteorexample:
     container_name: meteorexample-1
@@ -16,7 +11,7 @@ services:
     environment:
       APP: meteorexample
       ROOT_URL: http://meteor.click/
-      # MONGO_URL: mongodb://USERNAME:PASSWORD@172.17.0.1:27017/DATABASE
+      MONGO_URL: mongodb://USERNAME:PASSWORD@172.17.0.1:27017/DATABASE
       # MONGO_OPLOG_URL: mongodb://USERNAME:PASSWORD@mongo:27017/local
       # MAIL_URL: smtp://info@meteor.click:PASSWORD@mail.server.net:465/
       NODE_ENV: production
@@ -24,5 +19,3 @@ services:
       # METEOR_SETTINGS: '' # paste meteor settings.json here in one line!
     # volumes:
     #   - /some/mounts:/app/files
-    # logging:
-    #   driver: syslog
