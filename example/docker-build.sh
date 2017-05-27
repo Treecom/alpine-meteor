@@ -21,7 +21,7 @@ meteor npm i &&
 meteor build --directory $BUILD_DIR --architecture=os.linux.x86_64 --server-only &&
 
 # pull fresh base image:
-docker pull martinez/meteor-alpine:latest &&
+docker pull martinezko/alpine-meteor:latest &&
 
 
 # build container
