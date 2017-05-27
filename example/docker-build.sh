@@ -29,17 +29,17 @@ docker build --rm -t ${CONTAINER}:${TAG} . &&
 
 # create tag on container
 if [ $REGISTRY ]; then
-	docker tag ${CONTAINER}:${TAG} ${REGISTRY}/${CONTAINER}:${TAG} &&
+	docker tag ${CONTAINER}:${TAG} ${REGISTRY}/${CONTAINER}:${TAG}
 else
-	docker tag ${CONTAINER}:${TAG} ${CONTAINER}:${TAG} &&
-fi
+	docker tag ${CONTAINER}:${TAG} ${CONTAINER}:${TAG}
+fi &&
 
 # push to our registry
 if [ $REGISTRY ]; then
-	docker push ${REGISTRY}/${CONTAINER}:${TAG} &&
+	docker push ${REGISTRY}/${CONTAINER}:${TAG}
 else
-	docker push ${CONTAINER}:${TAG} &&
-fi
+	docker push ${CONTAINER}:${TAG}
+fi &&
 
 # clean images if needed
 # docker rmi -f ${CONTAINER}:${TAG} ${REGISTRY}/${CONTAINER}:${TAG} martinezko/alpine-meteor:latest
