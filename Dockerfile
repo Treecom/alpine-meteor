@@ -16,7 +16,7 @@ RUN apk --update add ${BUILD_PACKAGES} \
 	&& npm install -g node-gyp \
 	&& node-gyp install
 
-ONBUILD COPY .build/bundle /app
+ONBUILD COPY ../alpine-build/bundle /app
 
 ONBUILD RUN sh $METEORD_DIR/build_app.sh
 ONBUILD RUN sh $METEORD_DIR/rebuild_npm_modules.sh
