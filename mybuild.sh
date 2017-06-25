@@ -1,7 +1,10 @@
 #!/bin/sh
 set -e
 
-# docker build --no-cache --rm -t martinezko/alpine-meteor:latest .
-docker build --rm -t martinezko/alpine-meteor:latest .
-docker tag martinezko/alpine-meteor:latest martinezko/alpine-meteor:latest
-docker push martinezko/alpine-meteor:latest
+TAG="latest"
+# TAG="testing"
+
+# docker build --no-cache --rm -t martinezko/alpine-meteor:$TAG .
+docker build --rm -t martinezko/alpine-meteor:$TAG .
+docker tag martinezko/alpine-meteor:$TAG martinezko/alpine-meteor:$TAG
+docker push martinezko/alpine-meteor:$TAG
