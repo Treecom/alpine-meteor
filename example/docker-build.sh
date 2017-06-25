@@ -5,7 +5,7 @@ set -e
 CONTAINER=martinez/alpine-meteor-example	# <-- Name your container
 TAG=latest									# <-- Tag for your container
 REGISTRY=false								# <-- If you use other then github repo
-BUILD_DIR=`pwd`/.build						# <-- This is where meteor build your files.
+BUILD_DIR=${PWD}/.build			# <-- This is where meteor build your files.
 											#     Folder will be created and after build will be deleted
 
 echo "Start building container ${CONTAINER} ..."
@@ -21,7 +21,7 @@ meteor npm i &&
 meteor build --directory $BUILD_DIR --architecture=os.linux.x86_64 --server-only &&
 
 # pull fresh base image:
-docker pull martinez/meteor-alpine:latest &&
+docker pull martinezko/alpine-meteor:latest &&
 
 
 # build container
@@ -29,17 +29,17 @@ docker build --rm -t ${CONTAINER}:${TAG} . &&
 
 # create tag on container
 if [ $REGISTRY ]; then
-	docker tag ${CONTAINER}:${TAG} ${REGISTRY}/${CONTAINER}:${TAG} &&
+	docker tag ${CONTAINER}:${TAG} ${REGISTRY}/${CONTAINER}:${TAG}
 else
-	docker tag ${CONTAINER}:${TAG} ${CONTAINER}:${TAG} &&
-fi
+	docker tag ${CONTAINER}:${TAG} ${CONTAINER}:${TAG}
+fi &&
 
 # push to our registry
 if [ $REGISTRY ]; then
-	docker push ${REGISTRY}/${CONTAINER}:${TAG} &&
+	docker push ${REGISTRY}/${CONTAINER}:${TAG}
 else
-	docker push ${CONTAINER}:${TAG} &&
-fi
+	docker push ${CONTAINER}:${TAG}
+fi &&
 
 # clean images if needed
 # docker rmi -f ${CONTAINER}:${TAG} ${REGISTRY}/${CONTAINER}:${TAG} martinezko/alpine-meteor:latest
@@ -50,6 +50,6 @@ fi
 # docker-compose up -d
 
 # clean build folder
-rm -rf .build
+rm -rf ${BUILD_DIR}
 
 echo "End build of container ${CONTAINER} ..."
