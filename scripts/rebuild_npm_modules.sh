@@ -1,5 +1,9 @@
 #!/bin/sh
 set -e
+
+export PYTHONPATH=/usr/lib/python2.7
+export GYP_DEFINES="linux_use_gold_flags=0"
+
 gyp_rebuild_inside_node_modules () {
   for npmModule in ./*; do
     cd $npmModule
