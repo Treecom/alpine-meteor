@@ -1,4 +1,4 @@
-FROM mhart/alpine-node:4.8.3
+FROM martinezko/alpine-node:3.6-node-4.8.3
 
 MAINTAINER Martin Bucko <bucko@treecom.net>
 
@@ -11,7 +11,7 @@ COPY scripts $METEORD_DIR
 RUN apk --update add ${BUILD_PACKAGES} \
 	&& mkdir -p /root \
 	&& mkdir -p /app \
-	&& npm install -g npm@4 \
+	&& npm install -g npm@3 \
 	&& npm install -g node-gyp \
 	&& node-gyp install
 

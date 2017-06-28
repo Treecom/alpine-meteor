@@ -1,8 +1,9 @@
 #!/bin/sh
 set -e
 
-TAG="latest"
+# TAG="latest"
 # TAG="testing"
+TAG="alpine-edge"
 
 # docker build --no-cache --rm -t martinezko/alpine-meteor:$TAG .
 docker build --rm -t martinezko/alpine-meteor:$TAG .
